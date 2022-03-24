@@ -1,0 +1,4 @@
+LiAZ;Cursor;4292;10.1;160;1
+LiAZ;Garmoshka;6213;20.1;100;2
+NefAZ;BetweenCities;5299;40.1;60;4
+NefAZ;Cities;5299;40.1;60;4
