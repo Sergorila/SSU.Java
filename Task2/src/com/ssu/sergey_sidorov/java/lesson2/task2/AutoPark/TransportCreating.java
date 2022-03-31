@@ -1,16 +1,15 @@
 package com.ssu.sergey_sidorov.java.lesson2.task2.AutoPark;
 
-import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.MiniBus;
-import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.Bus;
-import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.LongBus;
-import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.Transport;
+import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.*;
+import com.ssu.sergey_sidorov.java.lesson2.task2.TransportException.FuelConsumptionException;
+import com.ssu.sergey_sidorov.java.lesson2.task2.TransportException.VelocityTransportException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class TransportCreating {
-    Transport[] createBuses(String fileAddress) throws IOException {
+    Transport[] createBuses(String fileAddress) throws IOException, VelocityTransportException, FuelConsumptionException {
         BufferedReader reader = new BufferedReader(new FileReader(fileAddress));
         Transport[] buses = new Transport[4];
 

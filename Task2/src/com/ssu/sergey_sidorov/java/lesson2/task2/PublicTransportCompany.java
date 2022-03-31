@@ -2,14 +2,16 @@ package com.ssu.sergey_sidorov.java.lesson2.task2;
 
 import com.ssu.sergey_sidorov.java.lesson2.task2.AutoPark.TransportStation;
 import com.ssu.sergey_sidorov.java.lesson2.task2.Entities.Transport;
+import com.ssu.sergey_sidorov.java.lesson2.task2.TransportException.FuelConsumptionException;
+import com.ssu.sergey_sidorov.java.lesson2.task2.TransportException.VelocityTransportException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class PublicTransportCompany {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, VelocityTransportException, FuelConsumptionException {
         TransportStation station = new TransportStation("src/com/ssu/sergey_sidorov/java/lesson2/task2/AutoPark/CarValues.txt");
 
         Transport[] busPool = station.getBusPool();
