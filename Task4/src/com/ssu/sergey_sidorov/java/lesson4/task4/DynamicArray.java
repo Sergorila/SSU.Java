@@ -3,6 +3,8 @@ package com.ssu.sergey_sidorov.java.lesson4.task4;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
 public class DynamicArray<T> implements Iterable<T> {
     private T[] array;
@@ -82,8 +84,24 @@ public class DynamicArray<T> implements Iterable<T> {
         return sb.toString();
     }
 
+
     @Override
     public Iterator<T> iterator() {
-        return Arrays.stream(array).iterator();
+        Iterator<T> iterator = new Iterator<T>() {
+            private int pos = 0;
+
+            @Override
+            public boolean hasNext() {
+                return pos < size && array[pos] != null;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext())
+                    throw new NoSuchElementException();
+                return array[pos++];
+            }
+        };
+        return iterator;
     }
 }
